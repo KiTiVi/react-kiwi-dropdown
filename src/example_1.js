@@ -20,10 +20,6 @@ const fruitBaskets = [
 function App() {
   const [selectedOption, setSelectedOption] = useState('')
 
-  useEffect(() => {
-    Prism.highlightAll()
-  }, [])
-
   const onChange = selectedOption => {
     setSelectedOption(selectedOption)
   }
