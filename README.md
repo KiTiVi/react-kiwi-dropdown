@@ -30,3 +30,7 @@ There's only two required props, **options** and **onChange**.
 | value | string | Option value        | required |
 | text  | string | Option display text | required |
 | icon  | any    | Any component       |
+
+## Examples
+
+https://flamboyant-noether-f6a6d9.netlify.com/
