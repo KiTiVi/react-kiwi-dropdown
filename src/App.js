@@ -6,18 +6,18 @@ import Dropdown from 'react-kiwi-dropdown'
 import logo from './images/icons8-kiwi-80.png'
 
 const options = [
-  { value: 'kiwi', text: 'Select kiwis' },
-  { value: 'banana', text: 'Select bananas' },
-  { value: 'pineapple', text: 'Select pineapples' }
+  { value: 'kiwi', content: '🥝' },
+  { value: 'banana', content: '🍌' },
+  { value: 'pineapple', content: '🍍' }
 ]
 
 const fruitBaskets = [
-  { type: 'kiwi', text: 'Basket #1' },
-  { type: 'banana', text: 'Basket #2' },
-  { type: 'pineapple', text: 'Basket #3' },
-  { type: 'kiwi', text: 'Basket #4' },
-  { type: 'banana', text: 'Basket #5' },
-  { type: 'pineapple', text: 'Basket #6' }
+  { type: 'kiwi', text: 'Basket with 🥝' },
+  { type: 'banana', text: 'Basket with 🍌' },
+  { type: 'pineapple', text: 'Basket with 🍍' },
+  { type: 'kiwi', text: 'Basket with 🥝' },
+  { type: 'banana', text: 'Basket with 🍌' },
+  { type: 'pineapple', text: 'Basket with 🍍' }
 ]
 
 function App() {
@@ -46,7 +46,6 @@ function App() {
             onChange={onChange}
             buttonIndicator
             selectedOption={selectedOption}
-            checkedButtonIndicatorStyle={`background: #000;`}
           />
         </aside>
         <main>
