@@ -4,7 +4,7 @@ import { SingleArrow, DoubleArrow } from './styles/arrows'
 
 interface Option {
   value: string
-  text: string
+  content: any
   icon?: any
 }
 
@@ -12,34 +12,22 @@ interface Dropdown {
   options: Option[]
   selectedOption?: string
   onChange: (selectedOption: string) => void
-  customContainerStyle?: string
   buttonLabel?: string
   buttonIndicator?: boolean
   buttonArrow?: 'single' | 'double'
-  customButtonStyle?: string
-  customButtonIndicatorStyle?: string
-  checkedButtonIndicatorStyle?: string
-  customOptionListStyle?: string
-  customOptionStyle?: string
   selectedOptionIcon?: any
-  selectedOptionStyle?: string
+  className?: string
 }
 
 const Dropdown: React.FC<Dropdown> = ({
   options,
   selectedOption,
   onChange,
-  customContainerStyle,
   buttonLabel,
   buttonIndicator,
   buttonArrow,
-  customButtonStyle,
-  customButtonIndicatorStyle,
-  checkedButtonIndicatorStyle,
-  customOptionListStyle,
-  customOptionStyle,
   selectedOptionIcon,
-  selectedOptionStyle
+  className
 }) => {
   const [showOptions, setShowOptions] = useState<boolean>(false)
   const refDropdown = useRef<HTMLUListElement>(null)
@@ -79,17 +67,12 @@ const Dropdown: React.FC<Dropdown> = ({
   }
 
   return (
-    <Container customContainerStyle={customContainerStyle}>
-      <Button
-        onClick={e => toggleOptions(e)}
-        customButtonStyle={customButtonStyle}
-      >
+    <div className={className}>
+      <Button onClick={e => toggleOptions(e)} id="button">
         {buttonIndicator && (
           <ButtonIndicator
             ref={refButtonIndicator}
-            className={selectedOption ? 'selected' : ''}
-            customButtonIndicatorStyle={customButtonIndicatorStyle}
-            checkedButtonIndicatorStyle={checkedButtonIndicatorStyle}
+            className={`button--indicator ${selectedOption ? 'selected' : ''}`}
             onClick={() => selectedOption && onChange('')}
           />
         )}
@@ -98,17 +81,14 @@ const Dropdown: React.FC<Dropdown> = ({
         {!buttonArrow && <SingleArrow />}
       </Button>
       {showOptions && (
-        <OptionList
-          ref={refDropdown}
-          customOptionListStyle={customOptionListStyle}
-        >
+        <OptionList ref={refDropdown} id="option-list">
           {options.map(option => (
             <li key={option.value}>
               <Option
-                className={selectedOption === option.value ? 'selected' : ''}
+                className={`option ${
+                  selectedOption === option.value ? 'selected' : ''
+                }`}
                 onClick={() => onChange(option.value)}
-                customOptionStyle={customOptionStyle}
-                selectedOptionStyle={selectedOptionStyle}
               >
                 {option.icon}
                 <span
@@ -119,31 +99,19 @@ const Dropdown: React.FC<Dropdown> = ({
                   {selectedOptionIcon}
                 </span>
 
-                {option.text}
+                {option.content}
               </Option>
             </li>
           ))}
         </OptionList>
       )}
-    </Container>
+    </div>
   )
 }
 
 export default Dropdown
 
-interface ContainerProps {
-  readonly customContainerStyle?: string
-}
-
-const Container = styled.div<ContainerProps>`
-  ${({ customContainerStyle }) => customContainerStyle}
-`
-
-interface ButtonProps {
-  readonly customButtonStyle?: string
-}
-
-const Button = styled.button<ButtonProps>`
+const Button = styled.button`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -156,34 +124,24 @@ const Button = styled.button<ButtonProps>`
   &:focus {
     outline: none;
   }
-
-  ${({ customButtonStyle }) => customButtonStyle}
 `
 
-interface ButtonIndicatorProps {
-  readonly customButtonIndicatorStyle?: string
-  readonly checkedButtonIndicatorStyle?: string
-}
-
-const ButtonIndicator = styled.span<ButtonIndicatorProps>`
+const ButtonIndicator = styled.span`
   display: inline-block;
   padding: 7px;
   border: 1px solid rgba(0, 0, 0, 0.25);
   margin-right: 7.5px;
-
-  ${({ customButtonIndicatorStyle }) => customButtonIndicatorStyle}
-
-  &.selected {
-    ${({ checkedButtonIndicatorStyle }) => checkedButtonIndicatorStyle};
-  }
 `
 
-interface OptionProps {
-  readonly customOptionStyle?: string
-  readonly selectedOptionStyle?: string
-}
+const OptionList = styled.ul`
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+`
 
-const Option = styled.button<OptionProps>`
+const Option = styled.button`
   display: flex;
   align-items: center;
   width: 100%;
@@ -197,24 +155,7 @@ const Option = styled.button<OptionProps>`
     text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
   }
 
-  ${({ customOptionStyle }) => customOptionStyle}
-
   &.selected {
     text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
-    ${({ selectedOptionStyle }) => selectedOptionStyle}
   }
-`
-
-interface OptionListProps {
-  readonly customOptionListStyle?: string
-}
-
-const OptionList = styled.ul<OptionListProps>`
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-  ${({ customOptionListStyle }) => customOptionListStyle}
 `
