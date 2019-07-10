@@ -1,33 +1,35 @@
 {
-  "name": "react-kiwi-dropdown",
-  "version": "1.0.1",
-  "description": "| Name                        | Type                 | Description | | --------------------------- | -------------------- | ----------- | | options                     | array                | | selectedOption              | string               | | onChange                    | function             | | customContainerStyle        | string               | | buttonLabel                 | string               | | buttonIndicator             | boolean              | | buttonArrow                 | 'single' or 'double' | | customButtonStyle           | string               | | customButtonIndicatorStyle  | string               | | checkedButtonIndicatorStyle | string               | | customOptionListStyle       | string               | | customOptionStyle           | string               | | selectedOptionIcon          | any                  | | selectedOptionStyle         | string               |",
-  "main": "index.js",
-  "scripts": {
-    "prepare": "tsc && echo 'Finished building NPM package'"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://KiTiVi@github.com/KiTiVi/react-kiwi-dropdown.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KiTiVi/react-kiwi-dropdown/issues"
-  },
-  "homepage": "https://github.com/KiTiVi/react-kiwi-dropdown#readme",
-  "types": "index.d.ts",
-  "peerDependencies": {
-    "react": "^16.8.6"
-  },
-  "devDependencies": {
-    "@types/react": "^16.8.23",
+  "name": "kiwi-dropdown-example",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "prismjs": "^1.16.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "typescript": "^3.5.3"
+    "react-kiwi-dropdown": "^1.0.1",
+    "react-scripts": "3.0.1"
   },
-  "dependencies": {
-    "@types/styled-components": "^4.1.17",
-    "styled-components": "^4.3.2"
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
