@@ -1,6 +1,6 @@
 {
   "name": "react-kiwi-dropdown",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "| Name                        | Type                 | Description | | --------------------------- | -------------------- | ----------- | | options                     | array                | | selectedOption              | string               | | onChange                    | function             | | customContainerStyle        | string               | | buttonLabel                 | string               | | buttonIndicator             | boolean              | | buttonArrow                 | 'single' or 'double' | | customButtonStyle           | string               | | customButtonIndicatorStyle  | string               | | checkedButtonIndicatorStyle | string               | | customOptionListStyle       | string               | | customOptionStyle           | string               | | selectedOptionIcon          | any                  | | selectedOptionStyle         | string               |",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "url": "git+https://KiTiVi@github.com/KiTiVi/react-kiwi-dropdown.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/KiTiVi/react-kiwi-dropdown/issues"
   },

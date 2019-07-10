@@ -49,7 +49,7 @@ var Dropdown = function (_a) {
     };
     return (react_1.default.createElement("div", { className: className },
         react_1.default.createElement(Button, { onClick: function (e) { return toggleOptions(e); }, id: "button" },
-            buttonIndicator && (react_1.default.createElement(ButtonIndicator, { ref: refButtonIndicator, className: "button--indicator " + (selectedOption ? 'selected' : ''), onClick: function () { return selectedOption && onChange(''); } })),
+            buttonIndicator && (react_1.default.createElement(ButtonIndicator, { ref: refButtonIndicator, className: "button-indicator " + (selectedOption ? 'selected' : ''), onClick: function () { return selectedOption && onChange(''); } })),
             buttonLabel && buttonLabel,
             buttonArrow === 'double' && react_1.default.createElement(arrows_1.DoubleArrow, null),
             !buttonArrow && react_1.default.createElement(arrows_1.SingleArrow, null)),
