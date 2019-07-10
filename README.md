@@ -33,4 +33,4 @@ There's only two required props, **options** and **onChange**.
 
 ## Examples
 
-https://flamboyant-noether-f6a6d9.netlify.com/
+https://react-kiwi-dropdown.netlify.com/
