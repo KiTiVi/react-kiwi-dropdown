@@ -72,7 +72,7 @@ const Dropdown: React.FC<Dropdown> = ({
         {buttonIndicator && (
           <ButtonIndicator
             ref={refButtonIndicator}
-            className={`button--indicator ${selectedOption ? 'selected' : ''}`}
+            className={`button-indicator ${selectedOption ? 'selected' : ''}`}
             onClick={() => selectedOption && onChange('')}
           />
         )}

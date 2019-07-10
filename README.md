@@ -24,6 +24,49 @@ There's only two required props, **options** and **onChange**.
 | content | any    | Content to display | required |
 | icon    | any    | Any component      |
 
+## Styling
+
+The dropdown can easily be styled by extending the component with styled-components **styled()** function.
+Use predefined ids and classNames to add style to specific components.
+
+| id/className      | Description              | Selected className |
+| ----------------- | ------------------------ | ------------------ |
+| #button           | Button to toggle options |                    |
+| .button-indicator | any                      | &.selected         |
+| #option-list      | Option list              |                    |
+| .option           | Option                   | &.selected         |
+
+### Example
+
+```javascript
+const StyledDropdown = styled(Dropdown)`
+  #button {
+    background: red;
+  }
+
+  .button-indicator {
+    background: green;
+
+    &.selected {
+      background: pink;
+    }
+  }
+
+  #option-list {
+    background: yellowgreen;
+    padding: 5px;
+  }
+
+  .option {
+    background: lightcoral;
+
+    &.selected {
+      background: blue;
+    }
+  }
+`
+```
+
 ## Examples
 
 https://react-kiwi-dropdown.netlify.com/
