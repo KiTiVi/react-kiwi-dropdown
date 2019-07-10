@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": ".",
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "declaration": true,
+    "jsx": "react",
+    "lib": ["es2015", "dom"],
+    "types": ["react"],
+    "esModuleInterop": true
+  },
+  "files": ["src/index.ts"],
+  "exclude": ["node_modules"]
+}
