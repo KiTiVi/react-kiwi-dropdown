@@ -1,6 +1,6 @@
 {
   "name": "react-kiwi-dropdown",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "| Name                        | Type                 | Description | | --------------------------- | -------------------- | ----------- | | options                     | array                | | selectedOption              | string               | | onChange                    | function             | | customContainerStyle        | string               | | buttonLabel                 | string               | | buttonIndicator             | boolean              | | buttonArrow                 | 'single' or 'double' | | customButtonStyle           | string               | | customButtonIndicatorStyle  | string               | | checkedButtonIndicatorStyle | string               | | customOptionListStyle       | string               | | customOptionStyle           | string               | | selectedOptionIcon          | any                  | | selectedOptionStyle         | string               |",
   "main": "index.js",
   "scripts": {

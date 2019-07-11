@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles/Dropdown.css';
-import './styles/arrows.css';
+import './Dropdown.css';
+import './arrows.css';
 interface Option {
     value: string;
     content: any;

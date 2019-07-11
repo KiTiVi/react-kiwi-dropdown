@@ -8,8 +8,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-require("./styles/Dropdown.css");
-require("./styles/arrows.css");
+require("./Dropdown.css");
+require("./arrows.css");
 var Dropdown = function (_a) {
     var options = _a.options, selectedOption = _a.selectedOption, resetValue = _a.resetValue, onChange = _a.onChange, buttonLabel = _a.buttonLabel, buttonIndicator = _a.buttonIndicator, buttonIndicatorContent = _a.buttonIndicatorContent, buttonArrow = _a.buttonArrow, selectedOptionIcon = _a.selectedOptionIcon, className = _a.className;
     var _b = react_1.useState(false), showOptions = _b[0], setShowOptions = _b[1];
