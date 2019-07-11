@@ -4,7 +4,7 @@ A minimal, easy-to-use and highly adjustable dropdown component made with ReactJ
 
 ## Why?
 
-Styling <select> and <option> elements is a hassle when creating a custom dropdown.
+Styling \<select> and \<option> elements is a hassle when creating a custom dropdown.
 Many UI component libraries have great dropdown components but these are often heavily styled and not easy to overwrite. **react-kiwi-dropdown** is an easy to use dropdown component which makes overwriting default styles a breeze.
 
 ## Props
