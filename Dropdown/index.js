@@ -48,7 +48,8 @@ var Dropdown = function (_a) {
             !buttonArrow && react_1.default.createElement("span", { className: "KIWI-single-arrow" })),
         showOptions && (react_1.default.createElement("ul", { ref: refDropdown, id: "KIWI-option-list" }, options.map(function (option) { return (react_1.default.createElement("li", { key: option.value },
             react_1.default.createElement("button", { className: "KIWI-option " + (selectedOption === option.value ||
-                    (selectedOption.length &&
+                    (selectedOption &&
+                        selectedOption.length &&
                         selectedOption.includes(option.value))
                     ? 'selected'
                     : ''), onClick: function () { return onChange(option); } },

@@ -95,7 +95,8 @@ const Dropdown: React.FC<Dropdown> = ({
               <button
                 className={`KIWI-option ${
                   selectedOption === option.value ||
-                  (selectedOption.length &&
+                  (selectedOption &&
+                    selectedOption.length &&
                     selectedOption.includes(option.value))
                     ? 'selected'
                     : ''
