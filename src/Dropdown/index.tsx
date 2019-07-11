@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
-import styled from 'styled-components'
-import { SingleArrow, DoubleArrow } from './styles/arrows'
+import './styles/Dropdown.css'
+import './styles/arrows.css'
 
 interface Option {
   value: string
@@ -10,10 +10,12 @@ interface Option {
 
 interface Dropdown {
   options: Option[]
-  selectedOption?: string
-  onChange: (selectedOption: string) => void
+  selectedOption?: string | string[]
+  resetValue?: any
+  onChange: (selectedOption: any) => void
   buttonLabel?: string
   buttonIndicator?: boolean
+  buttonIndicatorContent?: any
   buttonArrow?: 'single' | 'double'
   selectedOptionIcon?: any
   className?: string
@@ -22,9 +24,11 @@ interface Dropdown {
 const Dropdown: React.FC<Dropdown> = ({
   options,
   selectedOption,
+  resetValue,
   onChange,
   buttonLabel,
   buttonIndicator,
+  buttonIndicatorContent,
   buttonArrow,
   selectedOptionIcon,
   className
@@ -68,27 +72,35 @@ const Dropdown: React.FC<Dropdown> = ({
 
   return (
     <div className={className}>
-      <Button onClick={e => toggleOptions(e)} id="button">
+      <button onClick={e => toggleOptions(e)} id="KIWI-button">
         {buttonIndicator && (
-          <ButtonIndicator
+          <span
             ref={refButtonIndicator}
-            className={`button-indicator ${selectedOption ? 'selected' : ''}`}
-            onClick={() => selectedOption && onChange('')}
-          />
+            className={`KIWI-button-indicator ${
+              selectedOption ? 'selected' : ''
+            }`}
+            onClick={() => selectedOption && onChange(resetValue)}
+          >
+            {buttonIndicatorContent}
+          </span>
         )}
         {buttonLabel && buttonLabel}
-        {buttonArrow === 'double' && <DoubleArrow />}
-        {!buttonArrow && <SingleArrow />}
-      </Button>
+        {buttonArrow === 'double' && <span className="KIWI-double-arrow" />}
+        {!buttonArrow && <span className="KIWI-single-arrow" />}
+      </button>
       {showOptions && (
-        <OptionList ref={refDropdown} id="option-list">
+        <ul ref={refDropdown} id="KIWI-option-list">
           {options.map(option => (
             <li key={option.value}>
-              <Option
-                className={`option ${
-                  selectedOption === option.value ? 'selected' : ''
+              <button
+                className={`KIWI-option ${
+                  selectedOption === option.value ||
+                  (selectedOption.length &&
+                    selectedOption.includes(option.value))
+                    ? 'selected'
+                    : ''
                 }`}
-                onClick={() => onChange(option.value)}
+                onClick={() => onChange(option)}
               >
                 {option.icon}
                 <span
@@ -100,62 +112,13 @@ const Dropdown: React.FC<Dropdown> = ({
                 </span>
 
                 {option.content}
-              </Option>
+              </button>
             </li>
           ))}
-        </OptionList>
+        </ul>
       )}
     </div>
   )
 }
 
 export default Dropdown
-
-const Button = styled.button`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 35px;
-  padding: 8px;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  font-size: 14px;
-
-  &:focus {
-    outline: none;
-  }
-`
-
-const ButtonIndicator = styled.span`
-  display: inline-block;
-  padding: 7px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  margin-right: 7.5px;
-`
-
-const OptionList = styled.ul`
-  position: absolute;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-`
-
-const Option = styled.button`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 8px;
-  background: #fff;
-  border: none;
-  position: relative;
-  font-size: 12px;
-
-  &:hover {
-    text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
-  }
-
-  &.selected {
-    text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
-  }
-`
