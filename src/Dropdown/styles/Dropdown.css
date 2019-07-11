@@ -1,0 +1,49 @@
+#KIWI-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+
+#KIWI-button:focus {
+  outline: none;
+}
+
+.KIWI-button-indicator {
+  display: inline-block;
+  min-height: 16px;
+  min-width: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  margin-right: 7.5px;
+}
+
+#KIWI-option-list {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.KIWI-option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px;
+  background: #fff;
+  border: none;
+  position: relative;
+  font-size: 12px;
+}
+
+.option:hover {
+  text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
+}
+
+.option .selected {
+  text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
+}
