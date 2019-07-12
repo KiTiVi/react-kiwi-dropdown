@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+export const code = `import React, { useState } from 'react'
 import styled from 'styled-components'
-import { code } from './code'
 import Dropdown from 'react-kiwi-dropdown'
 
 const options = [
@@ -39,70 +38,50 @@ function MultiSelect() {
   }
 
   return (
-    <article>
-      <h2>Multi-select</h2>
+    <StyledDropdown
+      options={options}
+      onChange={onChange}
+      resetValue={null}
+      buttonIndicator
+      selectedOption={selectedOption}
+    />
 
-      <Preview>
-        <aside>
-          <StyledDropdown
-            options={options}
-            onChange={onChange}
-            resetValue={null}
-            buttonIndicator
-            selectedOption={selectedOption}
-          />
-        </aside>
-
-        <BasketList>
-          {fruitBaskets.map((basket, i) => (
-            <Basket
-              key={i}
-              style={{
-                background: selectedOption.includes(basket.type)
-                  ? '#f0fedf'
-                  : '#ddd'
-              }}
-            >
-              {basket.text}
-            </Basket>
-          ))}
-        </BasketList>
-      </Preview>
-      <div
-        style={{ fontSize: '20px', fontWeight: 'bold', color: '#88C747' }}
-        onClick={() => setShowCode(showCode => !showCode)}
-      >
-        Show code
-      </div>
-      <div style={{ display: showCode ? 'block' : 'none' }}>
-        <pre>
-          <code className="language-javascript">{code}</code>
-        </pre>
-      </div>
-    </article>
-  )
+    <BasketList>
+      {fruitBaskets.map((basket, i) => (
+        <Basket
+          key={i}
+          style={{
+            background: selectedOption.includes(basket.type)
+              ? '#f0fedf'
+              : '#ddd'
+          }}
+        >
+          {basket.text}
+        </Basket>
+      ))}
+    </BasketList>
 }
 
 export default MultiSelect
 
-const Preview = styled.div`
+const Preview = styled.div\`
   display: flex;
 
   aside {
     flex: 1;
   }
-`
+\`
 
-const BasketList = styled.ul`
+const BasketList = styled.ul\`
   flex: 1;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
   padding: 0%;
-`
+\`
 
-const Basket = styled.li`
+const Basket = styled.li\`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,9 +90,9 @@ const Basket = styled.li`
   font-size: 50px;
   margin: 5px;
   border-radius: 50%;
-`
+\`
 
-const StyledDropdown = styled(Dropdown)`
+const StyledDropdown = styled(Dropdown)\`
   .KIWI-button-indicator {
     &.selected {
       background: #f0fedf;
@@ -136,4 +115,5 @@ const StyledDropdown = styled(Dropdown)`
       background: #ddd;
     }
   }
+\`
 `
