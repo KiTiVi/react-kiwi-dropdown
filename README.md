@@ -7,6 +7,39 @@ A minimal, easy-to-use and highly adjustable dropdown component made with ReactJ
 Styling \<select> and \<option> elements is a hassle when creating a custom dropdown.
 Many UI component libraries have great dropdown components but these are often heavily styled and not easy to overwrite. **react-kiwi-dropdown** is an easy to use dropdown component which makes overwriting default styles a breeze.
 
+## Usage
+
+```javascript
+import React, { useState } from 'react'
+import Dropdown from 'react-kiwi-dropdown'
+
+const [selectedOption, setSelectedOption] = useState('')
+
+const options = [
+  { value: 'kiwi', content: '🥝' },
+  { value: 'banana', content: '🍌' },
+  { value: 'pineapple', content: '🍍' }
+]
+
+const onChange = option => {
+  if (option.value === selectedOption) {
+    setSelectedOption('')
+  } else {
+    setSelectedOption(option.value)
+  }
+}
+
+return (
+  <Dropdown
+    options={options}
+    onChange={onChange}
+    buttonIndicator
+    resetValue={''}
+    selectedOption={selectedOption}
+  />
+)
+```
+
 ## Props
 
 There's only two required props, **options** and **onChange**.
@@ -30,6 +63,11 @@ There's only two required props, **options** and **onChange**.
 | value   | string | Option value       | required |
 | content | any    | Content to display | required |
 | icon    | any    | Any component      |
+
+## Button indicator
+
+The button indicator indicates if a value is selected and alo deselect all values if it's clicked while the dropdown is closed.
+Button indicator requires the prop **resetValue**. This value will be sent back when it deselects all values.
 
 ## Styling
 
