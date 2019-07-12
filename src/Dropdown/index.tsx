@@ -77,7 +77,7 @@ const Dropdown: React.FC<Dropdown> = ({
           <span
             ref={refButtonIndicator}
             className={`KIWI-button-indicator ${
-              selectedOption.length ? 'selected' : ''
+              selectedOption && selectedOption.length ? 'selected' : ''
             }`}
             onClick={() => selectedOption && onChange(resetValue)}
           >

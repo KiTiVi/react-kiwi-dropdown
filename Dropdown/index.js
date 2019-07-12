@@ -42,7 +42,7 @@ var Dropdown = function (_a) {
     };
     return (react_1.default.createElement("div", { className: className },
         react_1.default.createElement("button", { onClick: function (e) { return toggleOptions(e); }, className: "KIWI-button" },
-            buttonIndicator && (react_1.default.createElement("span", { ref: refButtonIndicator, className: "KIWI-button-indicator " + (selectedOption.length ? 'selected' : ''), onClick: function () { return selectedOption && onChange(resetValue); } }, buttonIndicatorContent)),
+            buttonIndicator && (react_1.default.createElement("span", { ref: refButtonIndicator, className: "KIWI-button-indicator " + (selectedOption && selectedOption.length ? 'selected' : ''), onClick: function () { return selectedOption && onChange(resetValue); } }, buttonIndicatorContent)),
             buttonLabel && buttonLabel,
             buttonArrow === 'double' && react_1.default.createElement("span", { className: "KIWI-double-arrow" }),
             !buttonArrow && react_1.default.createElement("span", { className: "KIWI-single-arrow" })),
