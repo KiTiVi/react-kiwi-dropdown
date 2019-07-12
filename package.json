@@ -6,7 +6,7 @@
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-kiwi-dropdown": "^1.0.8",
+    "react-kiwi-dropdown": "^1.0.11",
     "react-scripts": "3.0.1",
     "styled-components": "^4.3.2"
   },

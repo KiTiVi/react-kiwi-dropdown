@@ -5,6 +5,7 @@ import './prism.css'
 import logo from './images/icons8-kiwi-80.png'
 import SingleSelect from './examples/SingleSelect/SingleSelect'
 import MultiSelect from './examples/MultiSelect/MultiSelect'
+import Styling from './examples/Styling/Styling'
 
 function App() {
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
 
       <SingleSelect />
       <MultiSelect />
+      <Styling />
     </div>
   )
 }
