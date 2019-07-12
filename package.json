@@ -1,7 +1,7 @@
 {
   "name": "react-kiwi-dropdown",
-  "version": "1.0.11",
-  "description": "| Name                        | Type                 | Description | | --------------------------- | -------------------- | ----------- | | options                     | array                | | selectedOption              | string               | | onChange                    | function             | | customContainerStyle        | string               | | buttonLabel                 | string               | | buttonIndicator             | boolean              | | buttonArrow                 | 'single' or 'double' | | customButtonStyle           | string               | | customButtonIndicatorStyle  | string               | | checkedButtonIndicatorStyle | string               | | customOptionListStyle       | string               | | customOptionStyle           | string               | | selectedOptionIcon          | any                  | | selectedOptionStyle         | string               |",
+  "version": "1.0.12",
+  "description": "A minimal, easy-to-use and highly adjustable dropdown component made with ReactJS.",
   "main": "index.js",
   "scripts": {
     "prepare": "tsc && echo 'Finished building NPM package'"
