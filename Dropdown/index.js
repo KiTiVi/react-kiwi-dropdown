@@ -41,12 +41,12 @@ var Dropdown = function (_a) {
         setShowOptions(function (prevShowOptions) { return !prevShowOptions; });
     };
     return (react_1.default.createElement("div", { className: className },
-        react_1.default.createElement("button", { onClick: function (e) { return toggleOptions(e); }, id: "KIWI-button" },
-            buttonIndicator && (react_1.default.createElement("span", { ref: refButtonIndicator, className: "KIWI-button-indicator " + (selectedOption ? 'selected' : ''), onClick: function () { return selectedOption && onChange(resetValue); } }, buttonIndicatorContent)),
+        react_1.default.createElement("button", { onClick: function (e) { return toggleOptions(e); }, className: "KIWI-button" },
+            buttonIndicator && (react_1.default.createElement("span", { ref: refButtonIndicator, className: "KIWI-button-indicator " + (selectedOption.length ? 'selected' : ''), onClick: function () { return selectedOption && onChange(resetValue); } }, buttonIndicatorContent)),
             buttonLabel && buttonLabel,
             buttonArrow === 'double' && react_1.default.createElement("span", { className: "KIWI-double-arrow" }),
             !buttonArrow && react_1.default.createElement("span", { className: "KIWI-single-arrow" })),
-        showOptions && (react_1.default.createElement("ul", { ref: refDropdown, id: "KIWI-option-list" }, options.map(function (option) { return (react_1.default.createElement("li", { key: option.value },
+        showOptions && (react_1.default.createElement("ul", { ref: refDropdown, className: "KIWI-option-list" }, options.map(function (option) { return (react_1.default.createElement("li", { key: option.value },
             react_1.default.createElement("button", { className: "KIWI-option " + (selectedOption === option.value ||
                     (selectedOption &&
                         selectedOption.length &&

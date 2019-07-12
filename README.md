@@ -11,17 +11,17 @@ Many UI component libraries have great dropdown components but these are often h
 
 There's only two required props, **options** and **onChange**.
 
-| Name                   | Type                      | Description                                |
-| ---------------------- | ------------------------- | ------------------------------------------ |
-| options                | array                     | An array containing option objects         |
-| selectedOption         | string / array of strings | The currently selected value/values        |
-| resetValue             | any                       | Used to reset select with button indicator |
-| onChange               | function                  | Function to call on change                 |
-| buttonLabel            | string                    | Button label                               |
-| buttonIndicator        | boolean                   | Show button indicator                      |
-| buttonIndicatorContent | any                       | Custom content inside button indicator     |
-| buttonArrow            | 'single' or 'double'      | Arrow style, single or double              |
-| selectedOptionIcon     | any                       | Custom icon for selected option            |
+| Name                   | Type                      | Description                                                                          |
+| ---------------------- | ------------------------- | ------------------------------------------------------------------------------------ |
+| options                | array                     | An array containing option objects                                                   |
+| selectedOption         | string / array of strings | The currently selected value/values                                                  |
+| resetValue             | any                       | Used to reset select with button indicator                                           |
+| onChange               | function                  | The dropdown will call this function on change and return the selected option object |
+| buttonLabel            | string                    | Button label                                                                         |
+| buttonIndicator        | boolean                   | Show button indicator                                                                |
+| buttonIndicatorContent | any                       | Custom content inside button indicator                                               |
+| buttonArrow            | 'single' or 'double'      | Arrow style, single or double                                                        |
+| selectedOptionIcon     | any                       | Custom icon for selected option                                                      |
 
 ## Option object
 
@@ -34,13 +34,13 @@ There's only two required props, **options** and **onChange**.
 ## Styling
 
 The dropdown can easily be styled by extending the component with styled-components **styled()** function.
-Use predefined ids and classNames to add style to specific components.
+Use predefined classNames to add style to specific components.
 
-| id/className           | Description              | Selected className |
+| className              | Description              | Selected className |
 | ---------------------- | ------------------------ | ------------------ |
-| #KIWI-button           | Button to toggle options |                    |
+| .KIWI-button           | Button to toggle options |                    |
 | .KIWI-button-indicator | Button indicator         | .selected          |
-| #KIWI-option-list      | Option list              |                    |
+| .KIWI-option-list      | Option list              |                    |
 | .KIWI-option           | Option                   | .selected          |
 
 ## Default style
@@ -48,7 +48,7 @@ Use predefined ids and classNames to add style to specific components.
 react-kiwi-dropdown comes with a miniminimalistic design and few lines of css.
 
 ```css
-#KIWI-button {
+.KIWI-button {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,7 +59,7 @@ react-kiwi-dropdown comes with a miniminimalistic design and few lines of css.
   font-size: 14px;
 }
 
-#KIWI-button:focus {
+.KIWI-button:focus {
   outline: none;
 }
 
@@ -71,7 +71,7 @@ react-kiwi-dropdown comes with a miniminimalistic design and few lines of css.
   margin-right: 7.5px;
 }
 
-#KIWI-option-list {
+.KIWI-option-list {
   position: absolute;
   list-style: none;
   margin: 0;
@@ -107,7 +107,7 @@ Styles can easily be extended by either overwriting the predefined ids and class
 
 ```javascript
 const StyledDropdown = styled(Dropdown)`
-  #KIWI-button {
+  .KIWI-button {
     background: red;
   }
 
@@ -119,7 +119,7 @@ const StyledDropdown = styled(Dropdown)`
     }
   }
 
-  #KIWI-option-list {
+  .KIWI-option-list {
     background: yellowgreen;
     padding: 5px;
   }

@@ -1,15 +1,15 @@
-#KIWI-button {
+.KIWI-button {
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 40px;
   padding: 8px;
-  background: #fff;
+  background: .fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   font-size: 14px;
 }
 
-#KIWI-button:focus {
+.KIWI-button:focus {
   outline: none;
 }
 
@@ -21,7 +21,7 @@
   margin-right: 7.5px;
 }
 
-#KIWI-option-list {
+.KIWI-option-list {
   position: absolute;
   list-style: none;
   margin: 0;
@@ -34,16 +34,16 @@
   align-items: center;
   width: 100%;
   padding: 8px;
-  background: #fff;
+  background: .fff;
   border: none;
   position: relative;
   font-size: 12px;
 }
 
 .option:hover {
-  text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
+  text-shadow: 0 0 0.65px .333, 0 0 0.65px .333;
 }
 
 .option .selected {
-  text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
+  text-shadow: 0 0 0.65px .333, 0 0 0.65px .333;
 }

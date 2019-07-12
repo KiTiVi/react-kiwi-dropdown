@@ -72,7 +72,7 @@ const Dropdown: React.FC<Dropdown> = ({
 
   return (
     <div className={className}>
-      <button onClick={e => toggleOptions(e)} id="KIWI-button">
+      <button onClick={e => toggleOptions(e)} className="KIWI-button">
         {buttonIndicator && (
           <span
             ref={refButtonIndicator}
@@ -89,7 +89,7 @@ const Dropdown: React.FC<Dropdown> = ({
         {!buttonArrow && <span className="KIWI-single-arrow" />}
       </button>
       {showOptions && (
-        <ul ref={refDropdown} id="KIWI-option-list">
+        <ul ref={refDropdown} className="KIWI-option-list">
           {options.map(option => (
             <li key={option.value}>
               <button

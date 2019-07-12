@@ -2,6 +2,7 @@
   display: inline-block;
   height: 0;
   width: 0;
+  margin-left: 12px;
   border-left: 5.5px solid rgba(0, 0, 0, 0);
   border-right: 5.5px solid rgba(0, 0, 0, 0);
   border-top: 5.5px solid rgba(0, 0, 0, 0.25);
