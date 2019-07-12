@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Prism from 'prismjs'
 import './prism.css'
 import logo from './images/icons8-kiwi-80.png'
+import SingleSelect from './examples/SingleSelect/SingleSelect'
 import MultiSelect from './examples/MultiSelect/MultiSelect'
 
 function App() {
@@ -11,12 +12,13 @@ function App() {
   }, [])
 
   return (
-    <div style={{ width: '1000px', margin: '0 auto' }}>
+    <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
       <Header>
         <img alt="icons8-kiwi-80.png" src={logo} />
         <h1>react-kiwi-dropdown</h1>
       </Header>
 
+      <SingleSelect />
       <MultiSelect />
     </div>
   )
@@ -27,6 +29,7 @@ export default App
 const Header = styled.header`
   display: flex;
   align-items: baseline;
+  margin-bottom: 40px;
 
   img {
     margin-top: 10px;

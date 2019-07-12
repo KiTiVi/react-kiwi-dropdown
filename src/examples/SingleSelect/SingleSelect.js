@@ -18,36 +18,28 @@ const fruitBaskets = [
   { type: 'pineapple', text: '🍍' }
 ]
 
-function MultiSelect() {
+function SingleSelect() {
   const [showCode, setShowCode] = useState(false)
-  const [selectedOption, setSelectedOption] = useState([])
+  const [selectedOption, setSelectedOption] = useState('')
 
   const onChange = option => {
-    if (!option) {
-      setSelectedOption([])
-      return
-    }
-
-    if (selectedOption.includes(option.value)) {
-      const newOptions = selectedOption.filter(
-        oldOption => oldOption !== option.value
-      )
-      setSelectedOption(newOptions)
+    if (option.value === selectedOption) {
+      setSelectedOption('')
     } else {
-      setSelectedOption([...selectedOption, option.value])
+      setSelectedOption(option.value)
     }
   }
 
   return (
     <article style={{ marginBottom: '80px' }}>
-      <h2>Multi-select</h2>
+      <h2>Single-select</h2>
 
       <Preview>
         <aside>
           <StyledDropdown
             options={options}
             onChange={onChange}
-            resetValue={null}
+            resetValue={''}
             buttonIndicator
             selectedOption={selectedOption}
           />
@@ -58,9 +50,7 @@ function MultiSelect() {
             <Basket
               key={i}
               style={{
-                background: selectedOption.includes(basket.type)
-                  ? '#f0fedf'
-                  : '#ddd'
+                background: selectedOption === basket.type ? '#f0fedf' : '#ddd'
               }}
             >
               {basket.text}
@@ -83,7 +73,7 @@ function MultiSelect() {
   )
 }
 
-export default MultiSelect
+export default SingleSelect
 
 const Preview = styled.div`
   display: flex;
