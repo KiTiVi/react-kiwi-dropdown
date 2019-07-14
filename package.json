@@ -1,6 +1,6 @@
 {
   "name": "react-kiwi-dropdown",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "A minimal, easy-to-use and highly adjustable dropdown component made with ReactJS.",
   "main": "index.js",
   "scripts": {
